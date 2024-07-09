@@ -1,13 +1,25 @@
-//import react into the bundle
+// Importa React y ReactDOM
 import React from "react";
-import ReactDOM from "react-dom/client";
+import ReactDOM from "react-dom";
 
-// include your styles into the webpack bundle
+// Incluye tus estilos en el bundle de Webpack
 import "../styles/index.css";
 
-//import your own components
-import Home from "./component/home.jsx";
+// Importa tu componente Navbar
+import Navbar from "./component/navbar.jsx";
+import Jumbotron from "./component/jumbotron.jsx";
+import Cards from "./component/cards.jsx";
 
-//render your react application
-ReactDOM.createRoot(document.getElementById('app')).render(<Home/>);
+// Renderiza tu aplicación React
+ReactDOM.render(
+  <React.StrictMode>
+    <Navbar />
+    <Jumbotron />
+    <div className="container mx-auto mt-4 mb-4">
+    <Cards />
+    </div>
+  </React.StrictMode>,
+    
+  document.getElementById("app")
+);
 
